@@ -10,11 +10,41 @@ export class Users extends Component {
         avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
         html_url: "https://github.com/mojombo",
       },
+      {
+        id: "id",
+        login: "mojombo",
+        avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
+        html_url: "https://github.com/mojombo",
+      },
+      {
+        id: "id",
+        login: "mojombo",
+        avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
+        html_url: "https://github.com/mojombo",
+      },
+      {
+        id: "id",
+        login: "mojombo",
+        avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
+        html_url: "https://github.com/mojombo",
+      },
+      {
+        id: "id",
+        login: "mojombo",
+        avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
+        html_url: "https://github.com/mojombo",
+      },
+      {
+        id: "id",
+        login: "mojombo",
+        avatar_url: "https://avatars0.githubusercontent.com/u/1?v=4",
+        html_url: "https://github.com/mojombo",
+      },
     ],
   };
   render() {
     return (
-      <div>
+      <div style={userStyle}>
         {this.state.users.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
@@ -23,7 +53,9 @@ export class Users extends Component {
   }
 }
 
+const userStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gridGap: "1rem",
+};
 export default Users;
-
-//creating a list and iterating it
-// for every user create an individual userItem component
