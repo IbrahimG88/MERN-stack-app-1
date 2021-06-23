@@ -8,7 +8,7 @@ export class UserItem extends Component {
     html_url: "https://github.com/mojombo",
   };
   render() {
-    const { login, avatar_url, html_url } = this.state;
+    const { login, avatar_url, html_url } = this.props.user;
 
     return (
       <div className='card text-center'>
@@ -31,7 +31,4 @@ export class UserItem extends Component {
 
 export default UserItem;
 
-// if you want to calll say this.state.html_url directly and other state properties:
-// const { login, avatar_url, html_url } = this.state;
-// eg: <img src={ avatar_url } alt.../> instead of src={ this.state.avatar_url }
-// this destructuring is pulling items out from this.state::  const { login, avatar_url, html_url } = this.state;
+// now we are using this.props.user for destructuring instead of this.state since we are using props
