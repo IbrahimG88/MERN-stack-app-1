@@ -37,30 +37,21 @@ export default App;
 //Used axios to get data from github api
 
 /* simplest form of axious get request:
-
   componentDidMount() {
     axios
       .get("https://api.github.com/users")
       .then((res) => console.log(res.data));
   }
-
   //Same as:
-
    async componentDidMount() {
     const res = await axios.get("https://api.github.com/users");
     console.log(res.data);
   }
-
-
   // getting the data using axious and adding them to the state using setState:
-
    async componentDidMount() {
     this.setState({ loading: true });
-
     const res = await axios.get("https://api.github.com/users");
-
     console.log(res.data);
-
     this.setState({ users: res.data, loading: false });
   }
   */

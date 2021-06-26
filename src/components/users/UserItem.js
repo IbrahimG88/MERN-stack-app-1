@@ -1,27 +1,28 @@
-import React from "react";
+import React, { Component } from "react";
 
-const UserItem = (props) => {
-  const { login, avatar_url, html_url } = props.user;
+export class UserItem extends Component {
+  render() {
+    const { login, avatar_url, html_url } = this.props.user;
 
-  return (
-    <div className='card text-center'>
-      <img
-        src={avatar_url}
-        alt=''
-        className='round-img'
-        style={{ width: "60px" }}
-      />
-      <h3>{login}</h3>
-      <div>
-        <a href={html_url} className='btn btn-dark btn-sm my-1'>
-          More
-        </a>
+    return (
+      <div className='card text-center'>
+        <img
+          src={avatar_url}
+          alt=''
+          className='round-img'
+          style={{ width: "60px" }}
+        />
+        <h3>{login}</h3>
+        <div>
+          <a href={html_url} className='btn btn-dark btn-sm my-1'>
+            More
+          </a>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default UserItem;
 
-// making this class component into a functional component
-// changes: this.props will be props, since it is an argument now
+// now we are using this.props.user for destructuring instead of this.state since we are using props

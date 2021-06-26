@@ -1,27 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-const NavBar = (props) => {
-  return (
-    <nav className='navbar bg-primary'>
-      <h1>
-        <i className={props.icon} /> {props.title}
-      </h1>
-    </nav>
-  );
-};
+export class NavBar extends Component {
+  static defaultProps = {
+    title: "Github Finder",
+    icon: "fab fa-github",
+    //alternative to the usual props, you can use only one of the two ways  <Navbar title="...".../>
+  };
 
-NavBar.defaultProps = {
-  title: "Github Finder",
-  icon: "fab fa-github",
-  //alternative to the usual props, you can use only one of the two ways  <Navbar title="...".../>
-};
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+  };
 
-NavBar.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
-};
+  render() {
+    return (
+      <nav className='navbar bg-primary'>
+        <h1>
+          <i className={this.props.icon} /> {this.props.title}
+        </h1>
+      </nav>
+    );
+  }
+}
 
 export default NavBar;
-
-// now make the class components into a functional component
