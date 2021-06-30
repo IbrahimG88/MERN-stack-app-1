@@ -19,6 +19,8 @@ class App extends Component {
 
     console.log(res.data);
 
+    console.log("hello world");
+
     this.setState({ users: res.data, loading: false });
   }
 
