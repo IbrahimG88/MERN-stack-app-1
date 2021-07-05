@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NavBar from "./layout/NavBar";
 import Users from "./components/users/Users";
 import axios from "axios";
+import Search from "./components/users/Search";
 
 class App extends Component {
   state = {
@@ -19,8 +20,6 @@ class App extends Component {
 
     console.log(res.data);
 
-    console.log("hello world");
-
     this.setState({ users: res.data, loading: false });
   }
 
@@ -29,6 +28,7 @@ class App extends Component {
       <div className='App'>
         <NavBar title='Github Finder' icon='fab fa-github' />
         <div className='container'>
+          <Search />
           <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
